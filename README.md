@@ -8,6 +8,9 @@ EuroPython 2014 scikit-learn tutorial.
 [@GaelVaroquaux](https://twitter.com/GaelVaroquaux) |
 http://gael-varoquaux.info
 
+**These materials are "almost" finished, but will change, before the
+training session**
+
 Installation Notes
 ------------------
 

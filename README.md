@@ -1,12 +1,12 @@
 EuroPython 2014 Scikit-learn Tutorial
 =======================================
 
-Instructor
------------
-- Gael Varoquaux [@GaelVaroquaux](https://twitter.com/GaelVaroquaux) | http://gael-varoquaux.info
-
-This repository will contain files and other info associated with the
+This repository contains files and other info associated with the
 EuroPython 2014 scikit-learn tutorial.
+
+**Instructor**: Gael Varoquaux
+[@GaelVaroquaux](https://twitter.com/GaelVaroquaux) |
+http://gael-varoquaux.info
 
 Installation Notes
 ------------------
@@ -19,13 +19,33 @@ painless way to install all the requirements is to use a package such as
 [Anaconda CE](http://store.continuum.io/ "Anaconda CE"), which can be
 downloaded and installed for free.
 
-### IPython notebook
+Reading the notebooks
+-----------------------
 
-To use the notebook you should be able to type:
+### With the IPython notebook
+
+The recommended way to access the materials is to execute them in the
+IPython notebook. If you have the IPython notebook installed, you should
+download the materials (see below), go the the `notebooks` directory, and
+type:
 
     ipython notebook
 
-in your terminal window and see the notebook panel load in your web browser.
+in your terminal window. This will open a notebook panel load in your web
+browser.
+
+### On Internet
+
+If you don't have the IPython notebook installed, you can browse the
+files on Internet:
+
+* For the instructions without the solutions:
+
+  http://nbviewer.ipython.org/github/GaelVaroquaux/sklearn_europython_2014/tree/master/notebooks/
+
+* For the instructions and the solutions:
+
+  http://nbviewer.ipython.org/github/GaelVaroquaux/sklearn_europython_2014/tree/master/rendered_notebooks/
 
 Downloading the Tutorial Materials
 ----------------------------------
@@ -41,85 +61,27 @@ repository is a much better option.
 
 Data Downloads
 --------------
+
 The data for this tutorial is not included in the repository.  We will be
 using several data sets during the tutorial: most are built-in to
-scikit-learn, which
-includes code which automatically downloads and caches these
-data.  Because the wireless network
-at conferences can often be spotty, it would be a good idea to download these
-data sets before arriving at the conference.
+scikit-learn, which includes code which automatically downloads and
+caches these data.  Because the wireless network at conferences can often
+be spotty, it would be a good idea to download these data sets before
+arriving at the conference. You can do so by using the `fetch_data.py`
+included in the tutorial materials. 
 
-
-Notebook Listing
-----------------
-These notebooks in this repository can be statically viewed using the
-excellent [nbviewer](http://nbviewer.ipython.org) site.  They will not
-be able to be modified within nbviewer.  To modify them, first download
-the tutorial repository, change to the notebooks directory, and type
-``ipython notebook``.  You should see the list in the ipython notebook
-launch page in your web browser.
-
-
-Original material for the Scipy 2013 tutorial
+Original material from the Scipy 2013 tutorial
 ----------------------------------------------
 
+This material is adapted from the scipy 2013 tutorial:
 
-http://github.com/jakevdp/sklearn_scipy2013
+    http://github.com/jakevdp/sklearn_scipy2013
 
+Original authors:
 
 - Gael Varoquaux [@GaelVaroquaux](https://twitter.com/GaelVaroquaux) | http://gael-varoquaux.info
 - Olivier Grisel [@ogrisel](https://twitter.com/ogrisel) | http://ogrisel.com
 - Jake VanderPlas [@jakevdp](https://twitter.com/jakevdp) | http://jakevdp.github.com
 
 
-Detailed Outline Tutorial 1 (intermediate track)
-------------------------------------------------
-- 0:00 - 0:15 -- Setup and Introduction
-- 0:15 - 0:30 -- Quick review of data visualization with matplotlib and numpy
-- 0:30 - 1:15 -- Representation of data in machine learning
-  + Downloading data within scikit-learn
-  + Categorical & Image data
-  + Feature extraction
-- 1:15 - 2:00 -- Basic principles of Machine Learning & the scikit-learn interface
-  + Supervised Learning: Classification & Regression
-  + Unsupervised Learning: Clustering & Dimensionality Reduction
-  + Example of PCA for data visualization
-  + Flow chart: how do I choose what to do with my data set?
-  + Exercise: Interactive Demo on linearly separable data
-  + Regularization: what it is and why it is necessary
-    - Training set vs test set error
-- 2:00 - 2:15 -- Break (possibly in the middle of the previous section)
-- 2:15 - 3:00 -- Supervised Learning
-  + Example of Classification: hand-written digits
-  + Measuring prediction performance
-  + Example of Regression: boston house prices
-- 3:00 - 4:15 -- Applications
-  + Examples from text mining
-  + Examples from image processing
 
-
-Detailed Outline Tutorial 2 (advanced track)
---------------------------------------------
-- 0:00 - 0:30 -- Model validation and testing
-  + Bias, Variance, Over-fitting, Under-fitting
-  + Using validation curves & learning  to improve your model
-  + Exercise: Tuning a random forest for the digits data
-- 0:30 - 1:30 -- In depth with a few learners
-  + SVMs and kernels
-  + Trees and forests
-  + Sparse and non-sparse linear models
-- 1:30 - 2:00 -- Unsupervised Learning
-  + Example of Dimensionality Reduction: hand-written digits
-  + Example of Clustering: Olivetti Faces
-- 2:00 - 2:15 -- Pipelining learners
-  + Examples of unsupervised data reduction followed by supervised learning.
-- 2:15 - 2:30 -- Break (possibly in the middle of the previous section)
-- 2:30 - 3:15 -- Parallel Machine Learning with IPython
-  + IPython.parallel, a short primer
-  + Parallel Model Assessment and Selection
-  + Running a cluster on the EC2 cloud using StarCluster
-- 3:15 - 4:00 -- Scaling Text Classification
-  + The hashing trick
-  + Online learning and out-of-core learning
-  + Stochastic Gradient Descent for linear models
-  + The Partition / Distribute / Average scaling scheme

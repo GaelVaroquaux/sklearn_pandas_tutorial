@@ -19,8 +19,13 @@ painless way to install all the requirements is to use a package such as
 [Anaconda CE](http://store.continuum.io/ "Anaconda CE"), which can be
 downloaded and installed for free.
 
-Reading the notebooks
------------------------
+Reading the training materials
+-------------------------------
+
+**Not all the material will be covered at the EuroPython training**:
+there is not enough time available. However, you can follow the material
+by yourself.
+
 
 ### With the IPython notebook
 

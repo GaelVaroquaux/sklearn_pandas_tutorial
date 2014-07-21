@@ -89,12 +89,15 @@ def check_sentiment140(datasets_folder):
 if __name__ == "__main__":
     datasets_folder = get_datasets_folder()
     check_twenty_newsgroups(datasets_folder)
-    check_sentiment140(datasets_folder)
-
     from sklearn.datasets import fetch_olivetti_faces
     fetch_olivetti_faces()
     print "Loading Labeled Faces Data (~200MB)"
     from sklearn.datasets import fetch_lfw_people
     fetch_lfw_people(min_faces_per_person=70, resize=0.4,
                      data_home=datasets_folder)
+
+    print 'Not downloading the sentiment140 data as we will not cover '
+    print 'notebook 10'
+    #check_sentiment140(datasets_folder)
+
     print("=> Success!")

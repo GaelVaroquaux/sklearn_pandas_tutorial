@@ -1,12 +1,16 @@
-EuroPython 2014 Scikit-learn Tutorial
-=======================================
+EuroScipy 2014 tutorial: Introduction to predictive analytics with pandas and scikit-learn
+=============================================================================================
 
 This repository contains files and other info associated with the
 EuroPython 2014 scikit-learn tutorial.
 
-**Instructor**: Gael Varoquaux
-[@GaelVaroquaux](https://twitter.com/GaelVaroquaux) |
-http://gael-varoquaux.info
+**Instructors**:
+
+* Olivier Grisel [@ogrisel](https://twitter.com/ogrisel) |
+  http://ogrisel.com 
+
+* Gael Varoquaux [@GaelVaroquaux](https://twitter.com/GaelVaroquaux) |
+  http://gael-varoquaux.info
 
 **These materials are "almost" finished, but will change, before the
 training session**
@@ -15,7 +19,7 @@ Installation Notes
 ------------------
 
 This tutorial will require recent installations of *numpy*, *scipy*,
-*matplotlib*, *scikit-learn*.
+*matplotlib*, *scikit-learn* and *pandas*.
 
 For users who do not yet have these  packages installed, a relatively
 painless way to install all the requirements is to use a package such as
@@ -25,7 +29,7 @@ downloaded and installed for free.
 Reading the training materials
 -------------------------------
 
-**Not all the material will be covered at the EuroPython training**:
+**Not all the material will be covered at the EuroScipy training**:
 there is not enough time available. However, you can follow the material
 by yourself.
 
@@ -49,11 +53,11 @@ files on Internet:
 
 * For the instructions without the solutions:
 
-  http://nbviewer.ipython.org/github/GaelVaroquaux/sklearn_europython_2014/tree/master/notebooks/
+  http://nbviewer.ipython.org/github/GaelVaroquaux/sklearn_pandas_tutorial/tree/master/notebooks/
 
 * For the instructions and the solutions:
 
-  http://nbviewer.ipython.org/github/GaelVaroquaux/sklearn_europython_2014/tree/master/rendered_notebooks/
+  http://nbviewer.ipython.org/github/GaelVaroquaux/sklearn_pandas_tutorial/tree/master/rendered_notebooks
 
 Downloading the Tutorial Materials
 ----------------------------------

@@ -7,7 +7,10 @@ This a mix from @minrk's various gists.
 import sys
 import os
 import io
-from Queue import Empty
+try:
+    from queue import Empty
+except:
+    from Queue import Empty
 
 from IPython.nbformat import current
 try:
@@ -30,17 +33,16 @@ def remove_outputs(nb):
 
 
 def run_cell(shell, iopub, cell, timeout=300):
-    # print cell.input
     shell.execute(cell.input)
     # wait for finish, maximum 5min by default
     reply = shell.get_msg(timeout=timeout)['content']
     if reply['status'] == 'error':
         failed = True
-        print "\nFAILURE:"
-        print cell.input
-        print '-----'
-        print "raised:"
-        print '\n'.join(reply['traceback'])
+        print("\nFAILURE:")
+        print(cell.input)
+        print('-----')
+        print("raised:")
+        print('\n'.join(reply['traceback']))
     else:
         failed = False
 
@@ -59,14 +61,13 @@ def run_cell(shell, iopub, cell, timeout=300):
             continue
 
         content = msg['content']
-        # print msg_type, content
         out = current.NotebookNode(output_type=msg_type)
 
         if msg_type == 'stream':
             out.stream = content['name']
             out.text = content['data']
         elif msg_type in ('display_data', 'pyout'):
-            for mime, data in content['data'].iteritems():
+            for mime, data in content['data'].items():
                 attr = mime.split('/')[-1].lower()
                 # this gets most right, but fix svg+html, plain
                 attr = attr.replace('+xml', '').replace('plain', 'text')
@@ -78,7 +79,7 @@ def run_cell(shell, iopub, cell, timeout=300):
             out.evalue = content['evalue']
             out.traceback = content['traceback']
         else:
-            print "unhandled iopub msg:", msg_type
+            print("unhandled iopub msg: %s" % msg_type)
 
         outs.append(out)
     return outs, failed
@@ -116,11 +117,11 @@ def run_notebook(nb):
             cells += 1
             sys.stdout.write('.')
 
-    print
-    print "ran notebook %s" % nb.metadata.name
-    print "    ran %3i cells" % cells
+    print()
+    print("ran notebook %s" % nb.metadata.name)
+    print("    ran %3i cells" % cells)
     if failures:
-        print "    %3i cells raised exceptions" % failures
+        print("    %3i cells raised exceptions" % failures)
     kc.stop_channels()
     km.shutdown_kernel()
     del km
@@ -129,7 +130,7 @@ def run_notebook(nb):
 def process_notebook_file(fname, action='clean', output_fname=None):
     print("Performing '{}' on: {}".format(action, fname))
     orig_wd = os.getcwd()
-    with io.open(fname, 'rb') as f:
+    with io.open(fname, 'r') as f:
         nb = current.read(f, 'json')
 
     if action == 'check':
@@ -146,7 +147,7 @@ def process_notebook_file(fname, action='clean', output_fname=None):
     os.chdir(orig_wd)
     if output_fname is None:
         output_fname = fname
-    with io.open(output_fname, 'wb') as f:
+    with io.open(output_fname, 'w') as f:
         nb = current.write(nb, f, 'json')
 
 

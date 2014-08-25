@@ -33,6 +33,8 @@ def remove_outputs(nb):
 
 
 def run_cell(shell, iopub, cell, timeout=300):
+    if not hasattr(cell, 'input'):
+        return [], False
     shell.execute(cell.input)
     # wait for finish, maximum 5min by default
     reply = shell.get_msg(timeout=timeout)['content']

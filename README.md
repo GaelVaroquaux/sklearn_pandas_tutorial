@@ -26,6 +26,13 @@ painless way to install all the requirements is to use a package such as
 [Anaconda CE](http://store.continuum.io/ "Anaconda CE"), which can be
 downloaded and installed for free.
 
+Please down in advance the Olivetti and/or the LFW datasets using::
+
+  from sklearn import datasets
+  datasets.fetch_olivetti_faces()
+  datasets.fetch_lfw_people()
+
+
 Reading the training materials
 -------------------------------
 

@@ -32,6 +32,12 @@ def remove_outputs(nb):
                     del cell['prompt_number']
 
 
+def remove_signature(nb):
+    """Remove the signature from a notebook"""
+    if 'signature' in nb.metadata:
+        del nb.metadata['signature']
+
+
 def run_cell(shell, iopub, cell, timeout=300):
     if not hasattr(cell, 'input'):
         return [], False
@@ -139,12 +145,14 @@ def process_notebook_file(fname, action='clean', output_fname=None):
         os.chdir(os.path.dirname(fname))
         run_notebook(nb)
         remove_outputs(nb)
+        remove_signature(nb)
     elif action == 'render':
         os.chdir(os.path.dirname(fname))
         run_notebook(nb)
     else:
         # Clean by default
         remove_outputs(nb)
+        remove_signature(nb)
 
     os.chdir(orig_wd)
     if output_fname is None:

@@ -19,12 +19,19 @@ Installation Notes
 ------------------
 
 This tutorial will require recent installations of *numpy*, *scipy*,
-*matplotlib*, *scikit-learn* and *pandas*.
+*matplotlib*, *scikit-learn*, *pandas* and *Pillow* (or PIL).
 
-For users who do not yet have these  packages installed, a relatively
+For users who do not yet have these packages installed, a relatively
 painless way to install all the requirements is to use a package such as
-[Anaconda CE](http://store.continuum.io/ "Anaconda CE"), which can be
-downloaded and installed for free.
+[Anaconda](http://continuum.io/downloads), which can be downloaded and
+installed for free.
+
+Please down in advance the Olivetti and/or the LFW datasets using::
+
+  from sklearn import datasets
+  datasets.fetch_olivetti_faces()
+  datasets.fetch_lfw_people()
+
 
 Reading the training materials
 -------------------------------
@@ -39,8 +46,9 @@ by yourself.
 The recommended way to access the materials is to execute them in the
 IPython notebook. If you have the IPython notebook installed, you should
 download the materials (see below), go the the `notebooks` directory, and
-type:
+launch IPython notebook from there by typing:
 
+    cd notebooks
     ipython notebook
 
 in your terminal window. This will open a notebook panel load in your web

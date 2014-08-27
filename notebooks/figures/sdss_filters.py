@@ -26,7 +26,7 @@ def fetch_filter(filt):
 
     loc = os.path.join(DOWNLOAD_DIR, '%s.dat' % filt)
     if not os.path.exists(loc):
-        print "downloading from %s" % url
+        print("downloading from %s" % url)
         F = urllib2.urlopen(url)
         open(loc, 'w').write(F.read())
 
@@ -43,7 +43,7 @@ def fetch_vega_spectrum():
     refspec_file = os.path.join(DOWNLOAD_DIR, REFSPEC_URL.split('/')[-1])
 
     if  not os.path.exists(refspec_file):
-        print "downloading from %s" % REFSPEC_URL
+        print("downloading from %s" % REFSPEC_URL)
         F = urllib2.urlopen(REFSPEC_URL)
         open(refspec_file, 'w').write(F.read())
 

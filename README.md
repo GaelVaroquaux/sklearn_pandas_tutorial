@@ -26,7 +26,7 @@ painless way to install all the requirements is to use a package such as
 [Anaconda](http://continuum.io/downloads), which can be downloaded and
 installed for free.
 
-Please down in advance the Olivetti and/or the LFW datasets using:
+Please down in advance the Olivetti dataset using:
 
     from sklearn import datasets
     datasets.fetch_olivetti_faces()
